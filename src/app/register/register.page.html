@@ -1,95 +1,43 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<html>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
 
-<div class="container">
-<br>  <p class="text-center">Mai multe informatii despre noile jocuri: <a href="http://bootstrap-ecommerce.com/"> JustGames.ro</a></p>
-<hr>
+  <link rel="stylesheet" href="/css/master.css">
+  <body>
+    <div class="login-box">
+      <h1>Register</h1>
+      <div class="textbox">
+        <i class="fa fa-user" aria-hidden="true"></i>
 
+          <input type="text" name="name" placeholder="Nume" value="">
+      </div>
 
-<div class="row justify-content-center">
-<div class="col-md-6">
-<div class="card">
-<header class="card-header">
-	<a href="" class="float-right btn btn-outline-primary mt-1">Log in</a>
-	<h4 class="card-title mt-2">Inregistrare</h4>
-</header>
-<article class="card-body">
-<form>
-	<div class="form-row">
-		<div class="col form-group">
-			<label>Nume</label>
-		  	<input type="text" class="form-control" placeholder="">
-		</div> <!-- form-group end.// -->
-		<div class="col form-group">
-			<label>Prenume</label>
-		  	<input type="text" class="form-control" placeholder=" ">
-		</div> <!-- form-group end.// -->
-	</div> <!-- form-row end.// -->
-	<div class="form-group">
-		<label>Adresa email</label>
-		<input type="email" class="form-control" placeholder="">
-		<small class="form-text text-muted">We'll never share your email with anyone else.</small>
-	</div> <!-- form-group end.// -->
-	<div class="form-group">
-			<label class="form-check form-check-inline">
-		  <input class="form-check-input" type="radio" name="gender" value="option1">
-		  <span class="form-check-label"> Barbat </span>
-		</label>
-		<label class="form-check form-check-inline">
-		  <input class="form-check-input" type="radio" name="gender" value="option2">
-		  <span class="form-check-label"> Femeie</span>
-		</label>
-	</div> <!-- form-group end.// -->
-	<div class="form-row">
-		<div class="form-group col-md-6">
-		  <label>Oras</label>
-		  <input type="text" class="form-control">
-		</div> <!-- form-group end.// -->
-		<div class="form-group col-md-6">
-		  <label>Judet</label>
-		  <select id="inputState" class="form-control">
-		    <option> Choose...</option>
-		      <option>Dolj</option>
-		      <option>Olt</option>
-		      <option selected="">Gorj</option>
-		      <option>Ilfov</option>
-		      <option>Brasov</option>
-		  </select>
-		</div> <!-- form-group end.// -->
-	</div> <!-- form-row.// -->
-	<div class="form-group">
-		<label>Create password</label>
-	    <input class="form-control" type="password">
-	</div> <!-- form-group end.// -->
-    <div class="form-group">
-        <button routerLink="/login" type="submit" class="btn btn-primary btn-block"> Register  </button>
-    </div> <!-- form-group// -->
-    <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>
-</form>
-</article> <!-- card-body end .// -->
-<div class="border-top card-body text-center">Have an account? <a href="">Log In</a></div>
-</div> <!-- card.// -->
-</div> <!-- col.//-->
+			<div class="textbox">
+				<i class="fa fa-envelope" aria-hidden="true"></i>
+					<input type="text" name="email" placeholder="Email" value="">
+			</div>
 
-</div> <!-- row.//-->
+			<select required id="inputState" class="textbox">
+			<option> Choose...</option>
+				<option>Gorj</option>
+				<option>Olt</option>
+				<option selected="">Dolj</option>
+				<option>Ilfov</option>
+				<option>Brasov</option>
+		</select>
+		<div class="textbox">
+		<i class="fa fa-globe" aria-hidden="true"></i>
+				<input type="text" name="email" placeholder="Oras" value="">
+		</div>
+			<div class="textbox">
+				<i class="fa fa-unlock-alt" aria-hidden="true"></i>
 
+				<input type="password" placeholder="Password" name="" value="" required minlength="4">
+			</div>
+			<div class="textbox">
+				<i class="fa fa-unlock-alt" aria-hidden="true"></i>
 
-</div>
-<!--container end.//-->
+				<input type="password" placeholder="Confirm Password" name="" value="" required="required">
+			</div>
+      <input class="btn" type="button" name="" value="Submit" routerLink="/login" required minlength="4">
+        </div>
 
-<br><br>
-<article class="bg-secondary mb-3">
-<div class="card-body text-center">
-    <h3 class="text-white mt-3">JustGames</h3>
-<p class="h5 text-white">Jocuri de societate  <br> pentru copii,adolescenti,tineri si adulti</p>  <br>
-<p><a class="btn btn-warning" target="_blank" href="http://bootstrap-ecommerce.com/"> JustGames.ro
- <i class="fa fa-window-restore "></i></a></p>
-</div>
-<br><br>
-</article>
-</html>
+  </body>
