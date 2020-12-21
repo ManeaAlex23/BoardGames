@@ -7,22 +7,24 @@
 
 
 
-  <link rel="stylesheet" href="/css/master.css">
+  <!-- <link rel="stylesheet" href="/css/master.css"> -->
   <body>
     <div class="login-box">
+      <ion-datetime displayFormat="YYYY/M/D  HH:mm " pickerFormat="YYYY MM D HH:mm +01:00" [(ngModel)]="myDate"></ion-datetime>
       <h1>Login</h1>
       <div class="textbox">
         <i class="fa fa-user" aria-hidden="true"></i>
 
-          <input type="text" name="Username" placeholder="Username" value="">
+          <input type="text" name="Username" placeholder="Username" [(ngModel)]="username"  value="">
       </div>
+
 
       <div class="textbox">
         <i class="fa fa-unlock-alt" aria-hidden="true"></i>
 
-        <input type="password" placeholder="Password" name="" value="">
+        <input type="password" placeholder="Password" name="" [(ngModel)]="password" value="">
       </div>
-      <input class="btn" type="button" name="" value="Sign in" routerLink="/tabs">
+      <input class="btn" type="button" name="" value="Sign in" (click)="login()">
       <input class="btn" type="button" name="" value="Register" routerLink="/register">
         </div>
 

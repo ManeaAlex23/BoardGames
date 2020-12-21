@@ -1,21 +1,22 @@
 
 
-  <link rel="stylesheet" href="/css/master.css">
+  <!-- <link rel="stylesheet" href="/css/master.css"> -->
   <body>
     <div class="login-box">
       <h1>Register</h1>
       <div class="textbox">
         <i class="fa fa-user" aria-hidden="true"></i>
 
-          <input type="text" name="name" placeholder="Nume" value="">
+          <input type="text" name="name" placeholder="Nume"  [(ngModel)]="username"  value="">
       </div>
 
 			<div class="textbox">
 				<i class="fa fa-envelope" aria-hidden="true"></i>
-					<input type="text" name="email" placeholder="Email" value="">
+					<input type="text" name="email" placeholder="Email" [(ngModel)]="email" value="">
 			</div>
 
-			<select required id="inputState" class="textbox">
+
+			<!-- <select required id="inputState" class="textbox" [(ngModel)]="district" >
 			<option> Choose...</option>
 				<option>Gorj</option>
 				<option>Olt</option>
@@ -25,19 +26,19 @@
 		</select>
 		<div class="textbox">
 		<i class="fa fa-globe" aria-hidden="true"></i>
-				<input type="text" name="email" placeholder="Oras" value="">
-		</div>
+				<input type="text" name="email" placeholder="Oras" [(ngModel)]="city" value="">
+		</div> -->
 			<div class="textbox">
 				<i class="fa fa-unlock-alt" aria-hidden="true"></i>
 
-				<input type="password" placeholder="Password" name="" value="" required minlength="4">
+				<input type="password" placeholder="Password" name="" [(ngModel)]="password" value="">
 			</div>
 			<div class="textbox">
 				<i class="fa fa-unlock-alt" aria-hidden="true"></i>
 
-				<input type="password" placeholder="Confirm Password" name="" value="" required="required">
+				<input type="password" placeholder="Confirm Password" name="" value="" [(ngModel)]="ConfirmPassword" >
 			</div>
-      <input class="btn" type="button" name="" value="Submit" routerLink="/login" required minlength="4">
+      <input class="btn" type="button" name="" value="Submit" (click)="register()">
         </div>
 
   </body>
