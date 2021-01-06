@@ -8,22 +8,23 @@ import {
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import {HttpClient} from '@angular/common/http';
-import {HttpHandler} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { HttpHandler } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {  FormGroup,FormBuilder,Validators } from "@angular/forms";
-import { ReactiveFormsModule} from "@angular/forms";
-import {HttpErrorResponse} from '@angular/common/http';
+import { FormGroup,FormBuilder,Validators } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpErrorResponse} from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { GamesService } from './games.service';
 import { TokenInterceptorService } from './token-interceptor.service';
-
+import { CartModalPageModule } from './pages/cart-modal/cart-modal.module';
+import { SMS } from '@ionic-native/sms/ngx';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,CartModalPageModule],
   providers: [
     StatusBar,
     SplashScreen,
@@ -33,6 +34,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
     AuthService,
     GamesService,
     TokenInterceptorService,
+    SMS,
 
 
 

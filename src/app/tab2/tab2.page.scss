@@ -27,3 +27,23 @@ ion-button{
   //background-color: rgba(0, 0, 255, 0.5);
 
 }
+
+ion-fab-button{
+  height: 70px;
+  width: 70px;
+
+}
+
+.cart-icon{
+  font-size: 50px;
+}
+.cart-length{
+  color: var(--ion-color-primary);
+  position: absolute;
+  top: 22px;
+  left: 25px;
+  font-weight: 600;
+  font-size: 1em;
+  min-width: 25px;
+  z-index: 10;
+}

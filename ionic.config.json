@@ -1,5 +1,7 @@
 {
   "name": "BoardGames",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

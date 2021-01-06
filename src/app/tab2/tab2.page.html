@@ -3,7 +3,12 @@
     <ion-title>Games</ion-title>
   </ion-navbar>
 </ion-header> -->
-
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
 
 <style>
 * {
@@ -29,10 +34,19 @@
 
 <ion-content>
 
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="openCart()" #cart>
+    <div class="cart-length">{{cartItemCount | async}}</div>
+    <ion-icon name="cart" class="cart-icon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-<div class="col-lg-3" *ngFor="let game of games">
+
+<div id="{{game.id}}" class="col-lg-3"  *ngFor="let game of games" >
+
 
   <ion-card>
+
     <ion-card-title>
       {{game.title}}
     </ion-card-title>
@@ -51,15 +65,32 @@
 
 
 
-      <ion-col>
-      <ion-fab-button vertical="center" vertical="end" ion-button clear color="secondary" type="button" item-right (click)="IncreaseNumberOfLikes()">
+      <ion-col size="2">
+      <ion-button  fill="clear" color="dark" item-right (click)="IncreaseNumberOfLikes(game.id)">
           <ion-icon name="heart" item-start style="color: red" > </ion-icon>
-        </ion-fab-button>
+        </ion-button>
+      </ion-col>
+        <ion-col size="2">
+        <ion-button fill="clear" color="dark" item-right  (click)="IncreaseNumberOfDisLikes(game.id)">
+            <ion-icon name="heart-dislike"  item-start style="color:grey" > </ion-icon>
+          </ion-button>
           </ion-col>
-        <ion-col>
-        <ion-fab-button vertical="center" vertical="end" ion-button clear color="secondary" type="button" item-right (click)="IncreaseNumberOfDisLikes()">
-            <ion-icon name="heart-dislike"  item-start style="color:black" > </ion-icon>
-          </ion-fab-button>
+
+          <ion-col size="3">
+            <ion-button fill="clear" color="dark" item-right  >
+                <ion-icon name='logo-youtube' item-start style="color:red;"></ion-icon>
+
+                  <a href="{{game.youtubeUrl}}">Despre</a>
+                  <ion-badge item-end>{{game.like}}</ion-badge>
+            </ion-button>
+          </ion-col>
+
+          <ion-col size="3">
+            <ion-button fill="clear" color="dark" item-right  (click)="addToCart(game)">
+                <ion-icon name='bag-add' item-start style="color: #55acee"></ion-icon>
+                <ion-text> Inchiriaza </ion-text>
+                <ion-badge item-end>{{game.NoRent}}</ion-badge>
+           </ion-button>
           </ion-col>
 
     </ion-item>
@@ -69,23 +100,24 @@
 
 
 
-    <ion-item>
+    <!-- <ion-item>
       <ion-col>
-        <ion-button ion-button icon-only clear>
+        <ion-button ion-button icon-only clear >
             <ion-icon name='logo-youtube' item-start style="color: #d03e84;"></ion-icon>
               <ion-text> Despre joc</ion-text>
+              <a href="{{game.youtubeUrl}}">youtube</a>
               <ion-badge item-end>{{game.like}}</ion-badge>
         </ion-button>
       </ion-col>
 
       <ion-col>
-        <ion-button ion-button icon-only clear>
+        <ion-button ion-button icon-only clear (click)="addToCart(game)">
             <ion-icon name='bag-add' item-start style="color: #55acee"></ion-icon>
             <ion-text> Inchiriaza joc</ion-text>
             <ion-badge item-end>{{game.NoRent}}</ion-badge>
        </ion-button>
       </ion-col>
-    </ion-item>
+    </ion-item> -->
 
 
 
@@ -97,6 +129,23 @@
 
 
 </ion-content>
+
+<!-- <ion-item>
+
+
+
+  <ion-col>
+  <ion-button  fill="clear" color="dark" item-right (click)="IncreaseNumberOfLikes(game.id)">
+      <ion-icon name="heart" item-start style="color: red" > </ion-icon>
+    </ion-button>
+  </ion-col>
+    <ion-col>
+    <ion-button vertical="center" vertical="end" ion-button clear color="black" type="button" item-right (click)="IncreaseNumberOfDisLikes(game.id)">
+        <ion-icon name="heart-dislike"  item-start style="color:black" > </ion-icon>
+      </ion-button>
+      </ion-col>
+
+</ion-item> -->
 
 <!--
   <ion-card>

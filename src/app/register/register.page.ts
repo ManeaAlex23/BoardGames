@@ -37,7 +37,6 @@ export class RegisterPage implements OnInit {
       if(this.password!=this.ConfirmPassword)
       { console.log(this.password);
         console.log("Nu ai voie ");
-
       }
       else
       {

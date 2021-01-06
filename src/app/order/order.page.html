@@ -1,0 +1,34 @@
+
+  <body>
+    <div class="order-box">
+      <h1>Place order</h1>
+      <div>
+
+    </div>
+    <div class="textbox1">
+      <i class="fa fa-envelope" aria-hidden="true"></i>
+        <input type="text" name="City" placeholder="Oras" [(ngModel)]="city" value="">
+    </div>
+    <select required id="inputState" class="textbox1" placeholder="Judet" [(ngModel)]="district" >
+    <option> Choose...</option>
+      <option>Gorj</option>
+      <option>Olt</option>
+      <option selected="">Dolj</option>
+      <option>Ilfov</option>
+      <option>Brasov</option>
+  </select>
+      <div class="textbox1">
+        <i class="fa fa-user" aria-hidden="true"></i>
+
+          <input type="text" name="deliverAdress" placeholder="Adresa"  [(ngModel)]="deliverAdress"  value="">
+      </div>
+
+
+
+
+
+
+      <input class="btn" type="button" name="" value="Submit" (click)="register()">
+        </div>
+
+  </body>
