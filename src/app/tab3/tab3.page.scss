@@ -1,20 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Calibri:400,300,700);
-
-body {
-    background: linear-gradient(to top, rgb(245, 147, 147) 1%, white 99%);
-    height: 100vh;
-    vertical-align: middle;
-    display: flex;
-    font-family: 'Calibri', sans-serif !important;
-    font-size: 14px
-}
-
-.card {
-    margin: auto;
-    max-width: 450px;
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
-
 @media(max-width:768px) {
     .card {
         width: 90%
@@ -29,26 +13,19 @@ body {
     padding: 4vh 0 6vh;
     text-align: center
 }
-
 .heading {
     display: flex;
     align-items: center;
     vertical-align: middle
 }
-
-.heading p {
-    margin-bottom: 0
-}
-
 input {
+    position:relative;
     border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 0.75rem;
-    outline: none;
-    width: 100%;
-    min-width: unset;
+
+
+
     background-color: transparent
 }
-
 .form-element {
     margin: 4vh 0
 }
@@ -72,30 +49,16 @@ form .col-1 {
     font-size: 3vh;
     justify-content: center
 }
-
-#code {
-    text-align: center
-}
-
-form .row {
-    margin: 0
-}
-
-hr {
-    margin: 0;
-    border-top: 2px solid rgba(0, 0, 0, .1)
-}
-
 #input-header {
     color: grey
 }
-
 .invalid {
     color: grey;
     line-height: 1.2
 }
 
 .btn {
+    position: relative;
     width: 50%;
     background-color: rgb(255, 38, 0);
     border-color: rgb(255, 38, 0);
@@ -115,20 +78,4 @@ hr {
 
 .btn:hover {
     color: white
-}
-
-input:focus::-webkit-input-placeholder {
-    color: transparent
-}
-
-input:focus:-moz-placeholder {
-    color: transparent
-}
-
-input:focus::-moz-placeholder {
-    color: transparent
-}
-
-input:focus:-ms-input-placeholder {
-    color: transparent
 }

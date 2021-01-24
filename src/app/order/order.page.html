@@ -22,13 +22,25 @@
 
           <input type="text" name="deliverAdress" placeholder="Adresa"  [(ngModel)]="deliverAdress"  value="">
       </div>
+      <div class="textbox1">
+        <i class="fa fa-user" aria-hidden="true"></i>
+
+          <input type="number" name="rentedHours" placeholder="hours"  [(ngModel)]="rentedHours"  value="">
+      </div>
+      <div class="textbox1">
+        <i class="fa fa-user" aria-hidden="true"></i>
+
+          <input type="number" name="clientPhoneNumber" placeholder="076..."  [(ngModel)]="clientPhoneNumber"  value="">
+      </div>
 
 
 
 
 
 
-      <input class="btn" type="button" name="" value="Submit" (click)="register()">
+
+
+      <input class="btn" type="button" name="" value="Submit" (click)="PlaceOrder()">
         </div>
 
   </body>

@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'cart-modal',
     loadChildren: () => import('./pages/cart-modal/cart-modal.module').then( m => m.CartModalPageModule)
+  },
+  {
+    path: 'card-modal',
+    loadChildren: () => import('./pages/card-modal/card-modal.module').then( m => m.CardModalPageModule)
   }
 
 ];

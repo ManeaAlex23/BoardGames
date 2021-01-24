@@ -6,6 +6,8 @@ export interface GameModel {
     description:string;
     imageUrl:string;
     youtubeUrl:string;
+    numberofLikes:number;
+    numberofDislikes:number;
     ageCategory:string;
     price:any;
     disponibility:string;
@@ -17,11 +19,20 @@ export interface OrderModel {
   id:number;
   deliverAdress:string;
   city:string;
-  isProceesed:boolean;
+  gameId:number;
+  isProcesed:boolean;
   isDelivered:boolean;
   currentCurrierLocation:string;
   rentedHours:number;
   ClientPhoneNumber:string;
   CurrierPhoneNumber:string;
 
+}
+
+export interface PaymentModel {
+  cardNumber: string;
+  cardMonth: number;
+  cardYear: number;
+  cvv: string;
+  value: number;
 }

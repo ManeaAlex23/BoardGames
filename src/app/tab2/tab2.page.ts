@@ -49,6 +49,7 @@ ngAfterViewInit(){
   }
 
   addToCart(product){
+    localStorage.setItem('obiect comanda',product);
     this.animateCSS('tada');
     this.gameService.addProductToCart(product);
     this.gameService.getCart();
@@ -91,17 +92,41 @@ ngAfterViewInit(){
     let result = this.gameService.DisplaySelectedGameForOrder(id).subscribe(res =>{
         this.gameId = res;
         console.log(this.gameId)
+
+
+
+
     });
 
      }
 
+  UpdateLikes(){
+
+  }
+
   IncreaseNumberOfLikes(id){
     console.log("You have got like for "+id);
-    this.GetSelectedGameId(id);
-  }
+    let res1 = this.gameService.IncreaseNumberOfLikes({"id":id}).subscribe(data =>{
+      console.log("am aici", +data);
+    }, error => {
+      console.log(error);
+    }
+  );
+    //this.GetSelectedGameId(id);
+
+}
+
+
+
 
   IncreaseNumberOfDisLikes(id){
     console.log("Am primit dislike "+id);
+    let res2 = this.gameService.IncreaseNumberOfDislikes({"id":id}).subscribe(data =>{
+      console.log("dislike "+data);
+    }, error => {
+    console.log(error);
+    }
+  );
 
   }
 

@@ -13,12 +13,13 @@ import { NavController, AlertController, LoadingController, NumericValueAccessor
 export class CartModalPage implements OnInit {
 
   product:Array<GameModel>;
-
+  total:any;
   constructor(private cartService:GamesService,private modalCtrl:ModalController,private nav:NavController,private alert:AlertController) { }
 
   ngOnInit() {
     this.product = this.cartService.getCart();
-    console.log("Comanda",this.product)
+
+    console.log("Comanda",this.product);
   }
 
   decreaseCartItem(product){
@@ -28,6 +29,7 @@ export class CartModalPage implements OnInit {
   increaseCartItem(product){
 
     this.cartService.addProductToCart(product);
+
   }
   removeCartItem(product){
 
@@ -35,7 +37,9 @@ export class CartModalPage implements OnInit {
   }
   getTotal(){
 
-    return this.product.reduce((i,j) => i+j.price *j.numberofUnits,0);
+    this.total = this.product.reduce((i,j) => i+j.price *j.numberofUnits,0);
+    localStorage.setItem("total",this.total);
+    return this.total;
   }
   close(){
     //this.modalCtrl.dismiss();

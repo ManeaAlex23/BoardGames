@@ -1,0 +1,208 @@
+<body>
+    <div class="pay-box">
+      <h1>Payment</h1>
+      <div>
+
+        <div class="icon-container">
+          <i class="fa fa-cc-visa" aria-hidden="true" style="font-size:36px" style="color:navy;"></i>
+          <!-- <i class="fa fa-cc-amex" style="color:blue;"></i> -->
+          <i class="fa fa-cc-mastercard" aria-hidden="true" style="color:red;"></i>
+
+          <!-- <i class="fa fa-cc-discover" style="color:orange;"></i> -->
+        </div>
+    </div>
+    <div class="textbox1">
+      <ion-icon name="card-outline"></ion-icon>
+        <input type="text" name="cardNumber" placeholder="Card-number" [(ngModel)]="cardNumber" value="" maxlength="19">
+    </div>
+    <div class="textbox1">
+      <ion-icon name="calendar-outline"></ion-icon>
+      <ion-list>
+  <ion-item>
+
+<ion-select [(ngModel)]="SelectedMonth" (ionChange)="onChange(SelectedMonth) "(click)="ApplyDropList()">
+  <ion-select-option *ngFor="let val of selectDropDownMonth" expand="true" (click)="ApplyDropList()" (ionChange)="onChange(val)">{{val}}</ion-select-option>
+</ion-select>
+  </ion-item>
+</ion-list>
+  </div>
+
+
+  <div class="textbox1">
+      <ion-icon name="calendar-outline"></ion-icon>
+      <ion-list>
+      <ion-item>
+
+    <ion-select [(ngModel)]="SelectedYear" (ionChange)="onChangeYear(SelectedYear) "(click)="ApplyDropList()">
+    <ion-select-option *ngFor="let val of selectDropDownYear" expand="true" (click)="ApplyDropList()" (ionChange)="onChangeYear(val)">{{val}}</ion-select-option>
+    </ion-select>
+    </ion-item>
+    </ion-list>
+    </div>
+
+      <div class="textbox1">
+        <i class="fa fa-user" aria-hidden="true"></i>
+
+          <input type="text" name="UserCardName" placeholder="Nume"  [(ngModel)]="UserCardName"  value="">
+      </div>
+      <div class="textbox1">
+         <ion-icon name="card"></ion-icon>
+         <input type="password" name="CVV" plcaholder="CVV" [(ngModel)]="cvv" value="" maxlength="3">
+      </div>
+      <div class="textbox1">
+        <ion-icon name="cash-outline"></ion-icon>
+        <ion-col size="3" class="ion-text-end">
+          {{ this.total +' Lei'}}
+        </ion-col>
+          <!-- <input type="number" name="OrderValue" placeholder="Value"  [(ngModel)]="OrderValue"  value=""> -->
+      </div>
+      <input class="btn" type="button" name="" value="Submit" (click)="UsePaymentService()">
+        </div>
+
+  </body>
+<!-- <div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form>
+          <div class="ion-padding">
+            <ion-list>
+              <ion-item>
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            </ion-item>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+
+              <div class="ion-padding">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="ion-padding">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+
+
+          </ion-list>
+          </div>
+
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+</div> -->
+<!-- <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 mr-auto ml-auto">
+      <div class="panel panel-default">
+        <form [formGroup]="customStripeForm" (ngSubmit)="pay(customStripeForm.value)">
+          <div class="panel-body mt-5">
+            <h4>Stripe - Custom form demo</h4>
+            <p><b>{{ message }}</b></p>
+            <div class="row">
+              <div class="col-xs-12 col-md-12">
+                <div class="form-group">
+                  <label>CARD NUMBER</label>
+                  <div class="input-group">
+                    <input type="text" formControlName="cardNumber" class="form-control" placeholder="Valid Card Number" name="cardNumber" maxlength="18" />
+                    <span class="input-group-addon">
+                      <span class="fa fa-credit-card"></span>
+                    </span>
+                  </div>
+                  <div *ngIf="submitted &amp;&amp; customStripeForm.controls.cardNumber.errors" class="text-danger">
+                    <div *ngIf="customStripeForm.controls.cardNumber.errors.required">Card number is required</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-7 col-md-7">
+                <div class="form-group">
+                  <label><span class="hidden-xs">EXPIRATION</span> Date</label>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <select formControlName="expMonth" class="form-control">
+                          <option value="">Select Month</option>
+                          <option value="1">01</option>
+                          <option value="2">02</option>
+                          <option value="3">03</option>
+                          <option value="4">04</option>
+                          <option value="5">05</option>
+                          <option value="6">06</option>
+                          <option value="7">07</option>
+                          <option value="8">08</option>
+                          <option value="9">09</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6 pull-right">
+                    <div class="form-group">
+                      <select formControlName="expYear" class="form-control">
+                        <option value="">Select Year</option>
+                        <option value="20">2020</option>
+                        <option value="21">2021</option>
+                        <option value="22">2022</option>
+                        <option value="23">2023</option>
+                        <option value="24">2024</option>
+                        <option value="25">2025</option>
+                        <option value="26">2026</option>
+                        <option value="27">2027</option>
+                        <option value="28">2028</option>
+                        <option value="29">2029</option>
+                        <option value="30">2030</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div *ngIf="submitted &amp;&amp; customStripeForm.controls.expMonth.errors" class="text-danger">
+                  <div *ngIf="customStripeForm.controls.expMonth.errors.required">Expiration month is required</div>
+                </div>
+
+                <div *ngIf="submitted &amp;&amp; customStripeForm.controls.expYear.errors" class="text-danger">
+                  <div *ngIf="customStripeForm.controls.expYear.errors.required">Expiration year is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-5 col-md-5 pull-right">
+              <div class="form-group">
+                <label>CV CODE</label>
+                <input type="text" formControlName="cvv" class="form-control" placeholder="CVC" maxlength="4" />
+              </div>
+              <div *ngIf="submitted &amp;&amp; customStripeForm.controls.cvv.errors" class="text-danger">
+                <div *ngIf="customStripeForm.controls.cvv.errors.required">CVV is required</div>
+                <div *ngIf="customStripeForm.controls.cvv.errors.minlength">CVV must be at least 3 characters</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <button class="btn btn-warning btn-lg btn-block" *ngIf="!formProcess">Process payment</button>
+              <span class="btn btn-warning btn-lg btn-block" *ngIf="formProcess">Processing please wait...</span>
+            </div>
+          </div>
+        </div>
+      </form>
+      <p class="mt-2">Try it out using the test card number 4242 4242 4242 4242, a random three-digit CVC number and any expiration date in the future.</p>
+    </div>
+  </div>
+</div>
+</div> -->

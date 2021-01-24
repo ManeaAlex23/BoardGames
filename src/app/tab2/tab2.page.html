@@ -68,11 +68,13 @@
       <ion-col size="2">
       <ion-button  fill="clear" color="dark" item-right (click)="IncreaseNumberOfLikes(game.id)">
           <ion-icon name="heart" item-start style="color: red" > </ion-icon>
+          <ion-text>{{game.numberofLikes}}</ion-text>
         </ion-button>
       </ion-col>
         <ion-col size="2">
         <ion-button fill="clear" color="dark" item-right  (click)="IncreaseNumberOfDisLikes(game.id)">
             <ion-icon name="heart-dislike"  item-start style="color:grey" > </ion-icon>
+            <ion-text>{{game.numberofDislikes}}</ion-text>
           </ion-button>
           </ion-col>
 

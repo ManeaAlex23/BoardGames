@@ -12,19 +12,24 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHandler } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormGroup,FormBuilder,Validators } from "@angular/forms";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormBuilder,Validators } from "@angular/forms";
+//import { ReactiveFormsModule } from "@angular/forms";
 import { HttpErrorResponse} from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { GamesService } from './games.service';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { CartModalPageModule } from './pages/cart-modal/cart-modal.module';
 import { SMS } from '@ionic-native/sms/ngx';
+import { Stripe } from '@ionic-native/stripe/ngx';
+import {  ReactiveFormsModule} from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,CartModalPageModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,CartModalPageModule,FormsModule,ReactiveFormsModule],
   providers: [
     StatusBar,
     SplashScreen,
@@ -34,6 +39,11 @@ import { SMS } from '@ionic-native/sms/ngx';
     AuthService,
     GamesService,
     TokenInterceptorService,
+    ReactiveFormsModule,
+    FormControl,
+    FormsModule,
+
+    Stripe,
     SMS,
 
 

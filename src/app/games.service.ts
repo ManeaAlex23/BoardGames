@@ -38,9 +38,32 @@ export class GamesService {
 
   }
 
+  IncreaseNumberOfLikes(id):Observable<Array<GameModel>>{
+    let headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      Authorization: 'Bearer '+this.auth.getToken()
+    })
+
+    return this.http.put<Array<GameModel>>(`${this.GamePath}/${id}/like`,id,{headers});
+
+
+  }
+
+  IncreaseNumberOfDislikes(id):Observable<Array<GameModel>>{
+
+  let headers = new HttpHeaders({
+    'Content-Type':  'application/json',
+    Authorization: 'Bearer '+this.auth.getToken()
+  })
+
+
+    return this.http.put<Array<GameModel>>(`${this.GamePath}/${id}/dislike`,id,{headers});
+
+  }
+
 getCart(){
   console.log("aveti itemele",this.cart);
-  return this.cart;
+  return <Array<GameModel>>this.cart;
 
 }
 getCartItemCount(){
@@ -54,6 +77,7 @@ addProductToCart(product){
       if(p.id === product.id)
     {
       console.log("maresc");
+
       p.numberofUnits += 1;
       added =true;
       break;
