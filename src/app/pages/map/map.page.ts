@@ -21,14 +21,14 @@ export class MapPage  {
   constructor() { }
 
   ngOnInit() {
-
+    //  this.testMarker();
 
 
     }
-    testMarker(){
+    async testMarker(){
 
-            let center = this.mapComponent.map.getCenter();
-            this.mapComponent.addMarker(center.lat(), center.lng());
+            let center = await this.mapComponent.map.getCenter();
+            await   this.mapComponent.addMarker(center.lat(), center.lng());
 
         }
 

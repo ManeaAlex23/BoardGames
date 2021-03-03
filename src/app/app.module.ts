@@ -29,6 +29,8 @@ import {GoogleMapsComponent} from '../app/google-maps/google-maps.component';
 //import {MapComponent} from '../app/map/map.component'
 //import { MapPage } from '../app/map/map.page';
 //import { MapPage } from './map/map';
+//import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Plugins } from '@capacitor/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +53,7 @@ import {GoogleMapsComponent} from '../app/google-maps/google-maps.component';
     FormsModule,
     Stripe,
     SMS,
+
 
 
 

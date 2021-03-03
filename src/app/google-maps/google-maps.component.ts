@@ -4,7 +4,7 @@ import { DOCUMENT } from '@angular/common';
 import { Plugins } from '@capacitor/core';
 
 const { Geolocation, Network } = Plugins;
-
+declare var google:any;
 @Component({
   selector: 'app-google-maps',
   templateUrl: './google-maps.component.html',
