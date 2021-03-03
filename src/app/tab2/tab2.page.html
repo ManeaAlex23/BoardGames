@@ -32,32 +32,38 @@
 
 
 
-<ion-content>
 
-<ion-fab vertical="top" horizontal="end" slot="fixed">
+ <!-- <ion-grid fixed> -->
+
+<ion-fab vertical="top" horizontal="end-1">
   <ion-fab-button (click)="openCart()" #cart>
     <div class="cart-length">{{cartItemCount | async}}</div>
     <ion-icon name="cart" class="cart-icon"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-
+<ion-content>
 <div id="{{game.id}}" class="col-lg-3"  *ngFor="let game of games" >
 
 
   <ion-card>
 
+
     <ion-card-title>
       {{game.title}}
     </ion-card-title>
-    <img src="assets/icon/{{game.imageUrl}}"/>
-
+    <div class="container">
+    <img src="assets/icon/{{game.imageUrl}}" class="image"/>
+    <div class="overlay">
+      <div class="text">{{game.description}}</div>
+    </div>
+    </div>
     <ion-card-content>
-      <div class="expend" click="majorpointsexpand({{game.description}})">
+      <!-- <div class="expend" click="majorpointsexpand({{game.description}})">
         <ion-text>
         {{game.description}}
         </ion-text>
-      </div>
+      </div> -->
 
     </ion-card-content>
 
@@ -129,7 +135,7 @@
 
 </div>
 
-
+<!-- </ion-grid> -->
 </ion-content>
 
 <!-- <ion-item>

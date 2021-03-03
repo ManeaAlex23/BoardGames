@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path: 'card-modal',
     loadChildren: () => import('./pages/card-modal/card-modal.module').then( m => m.CardModalPageModule)
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./pages/map/map.module').then( m => m.MapPageModule)
   }
 
 ];

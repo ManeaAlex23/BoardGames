@@ -22,7 +22,7 @@ export class CardModalPage implements OnInit {
   cvv:string;
   gameId=[];
   orders:any;
-  total:number;
+  total:string;
   selectDropDownMonth:any;
   selectDropDownYear:any;
   dropMonth= [];

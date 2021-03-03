@@ -24,10 +24,17 @@ import { Stripe } from '@ionic-native/stripe/ngx';
 import {  ReactiveFormsModule} from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-
-
+import {AgmMap, MouseEvent,MapsAPILoader,AgmCoreModule  } from '@agm/core';
+import {GoogleMapsComponent} from '../app/google-maps/google-maps.component';
+//import {MapComponent} from '../app/map/map.component'
+//import { MapPage } from '../app/map/map.page';
+//import { MapPage } from './map/map';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    GoogleMapsComponent,
+    //MapPage
+  ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,CartModalPageModule,FormsModule,ReactiveFormsModule],
   providers: [
@@ -42,7 +49,6 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormControl,
     FormsModule,
-
     Stripe,
     SMS,
 

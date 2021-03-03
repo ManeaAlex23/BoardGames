@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <access origin="*" />
+  
+  <feature name="PayUmoneyPnP">
+    <param name="android-package" value="com.payumoney.sdkui.cordova.PayUmoneyPnP"/>
+  </feature>
+
+  <feature name="CordovaStripe">
+    <param name="android-package" value="com.zyramedia.cordova.stripe.CordovaStripe"/>
+  </feature>
+
+  <feature name="Sms">
+    <param name="android-package" value="com.cordova.plugins.sms.Sms"/>
+  </feature>
+
+  
+</widget>
